@@ -1,79 +1,80 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
-  /* Updated color tokens for futuristic orange theme */
+  /* Updated to use standard color values instead of problematic oklch */
   --background: #ffffff;
-  --foreground: #4b5563;
-  --card: #fffbeb;
-  --card-foreground: #4b5563;
-  --popover: rgba(255, 255, 255, 0.95);
-  --popover-foreground: #4b5563;
-  --primary: #ea580c;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #f97316;
   --primary-foreground: #ffffff;
-  --secondary: #f97316;
-  --secondary-foreground: #ffffff;
-  --muted: #f8fafc;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #0f172a;
+  --muted: #f3f4f6;
   --muted-foreground: #6b7280;
-  --accent: #f97316;
-  --accent-foreground: #ffffff;
+  --accent: #f3f4f6;
+  --accent-foreground: #0f172a;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #e5e7eb;
-  --input: #f9fafb;
-  --ring: rgba(234, 88, 12, 0.5);
-  --chart-1: #6366f1;
-  --chart-2: #3b82f6;
-  --chart-3: #10b981;
-  --chart-4: #fbbf24;
-  --chart-5: #ef4444;
+  --input: #e5e7eb;
+  --ring: #f97316;
+  --chart-1: #3b82f6;
+  --chart-2: #10b981;
+  --chart-3: #f59e0b;
+  --chart-4: #ef4444;
+  --chart-5: #8b5cf6;
   --radius: 0.5rem;
-  --sidebar: #f3f4f6;
-  --sidebar-foreground: #1f2937;
-  --sidebar-primary: #e5e7eb;
-  --sidebar-primary-foreground: #1f2937;
-  --sidebar-accent: #f97316;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #d1d5db;
-  --sidebar-ring: rgba(234, 88, 12, 0.3);
+  --sidebar: #f9fafb;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #0f172a;
+  --sidebar-primary-foreground: #f9fafb;
+  --sidebar-accent: #f3f4f6;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #f97316;
 }
 
 .dark {
-  /* Updated dark mode tokens */
   --background: #0f172a;
   --foreground: #f1f5f9;
   --card: #1e293b;
   --card-foreground: #f1f5f9;
-  --popover: rgba(15, 23, 42, 0.95);
+  --popover: #1e293b;
   --popover-foreground: #f1f5f9;
   --primary: #f97316;
   --primary-foreground: #ffffff;
-  --secondary: #ea580c;
-  --secondary-foreground: #ffffff;
+  --secondary: #334155;
+  --secondary-foreground: #f1f5f9;
   --muted: #334155;
   --muted-foreground: #94a3b8;
-  --accent: #f97316;
-  --accent-foreground: #ffffff;
+  --accent: #334155;
+  --accent-foreground: #f1f5f9;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #334155;
-  --input: #1e293b;
-  --ring: rgba(249, 115, 22, 0.5);
+  --input: #334155;
+  --ring: #f97316;
+  --chart-1: #3b82f6;
+  --chart-2: #10b981;
+  --chart-3: #f59e0b;
+  --chart-4: #ef4444;
+  --chart-5: #8b5cf6;
   --sidebar: #1e293b;
   --sidebar-foreground: #f1f5f9;
-  --sidebar-primary: #f97316;
+  --sidebar-primary: #3b82f6;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #334155;
   --sidebar-accent-foreground: #f1f5f9;
   --sidebar-border: #334155;
-  --sidebar-ring: rgba(249, 115, 22, 0.3);
+  --sidebar-ring: #f97316;
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
