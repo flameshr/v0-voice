@@ -2,15 +2,16 @@
 
 import { useRef } from "react"
 import { useFrame } from "@react-three/fiber"
-import type { Mesh, BufferGeometry, Material } from "three"
+import * as THREE from "three"
+import type { Mesh } from "three"
 
 interface AnimatedGlobeProps {
   isActive: boolean
 }
 
 export function AnimatedGlobe({ isActive }: AnimatedGlobeProps) {
-  const meshRef = useRef<Mesh<BufferGeometry, Material | Material[]>>(null)
-  const wireframeRef = useRef<Mesh<BufferGeometry, Material | Material[]>>(null)
+  const meshRef = useRef<Mesh>(null)
+  const wireframeRef = useRef<Mesh>(null)
 
   useFrame((state) => {
     if (meshRef.current) {
@@ -45,7 +46,7 @@ export function AnimatedGlobe({ isActive }: AnimatedGlobeProps) {
       {/* Glowing outer ring */}
       <mesh>
         <ringGeometry args={[2.2, 2.4, 64]} />
-        <meshBasicMaterial color="#a855f7" transparent opacity={0.3} side={2} />
+        <meshBasicMaterial color="#a855f7" transparent opacity={0.3} side={THREE.DoubleSide} />
       </mesh>
 
       {/* Particle effects when active */}
