@@ -20,18 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <Suspense
-          fallback={
-            <div className="min-h-screen bg-gradient-to-br from-background via-card to-background flex items-center justify-center">
-              <div className="text-center">
-                <div className="animate-pulse text-2xl font-bold text-foreground mb-2">AI Voice Assistant</div>
-                <div className="text-muted-foreground">Loading...</div>
-              </div>
-            </div>
-          }
-        >
-          {children}
-        </Suspense>
+        <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>
     </html>
